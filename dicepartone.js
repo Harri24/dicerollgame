@@ -2,19 +2,11 @@ const readlineSync = require('readline-sync');
 
 console.log("Welcome to the Dice! ");
 
-/*
-const dice = {
-    sides: 6,
-    roll: function roll() {
-       randomNumber = Math.floor(Math.random() * this.sides) + 1;
-    return randomNumber;
+let diceNumber = readlineSync.question('How many dice would you like to roll? ');
+
+    let rolls = [];
+    for (i = 0; i < diceNumber; i++) {
+        rolls.push(Math.ceil( Math.random() * 6 ));
     }
-}
 
-//returning a number to the user 
-
-dice.roll();
-*/
-
-var diceRoll = Math.floor( Math.random() * 6 ) +1;
-console.log('You rolled a ' + diceRoll);
+console.log(`The results of your dice are ${rolls} `);
